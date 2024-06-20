@@ -32,29 +32,36 @@ not true
 signal health_depleted
 ```
 
-* await等待信号触发
+* await等待信号
 ```
 # 等待一个定时器触发
 await timer.timeout
 ```
 
-* $获取子节点
+* $获取
 ```
 # 相当于使用get_node
 $Child 等同于 get_node("Child")
 $"../" 等同于 get_node("../")，也等同于 get_parent()
 ```
 
-* 定义变量并指定类型
+* 指定类型
 ```
 var floor: PackedScene
 ```
 
-* 定义变量并设置`setter`与`getter`
+* `setter`与`getter`
 ```
 var m_name:
     set(value):
         m_name = value
     get:
         return "Lucy"
+```
+
+* @onready
+```
+# 在方法外不能使用$获取
+# @onready注解使赋值相当于在`_ready`f中进行
+@onready var sub_node = $SubNode
 ```

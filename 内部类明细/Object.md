@@ -44,5 +44,12 @@
 * `call_deferred`方法，设定在空闲后调用一个方法
   * 与`call`返回调用函数的返回值相比，该方法只返回`null`
 * `callv`方法，与`call`相比，传入参数的方式不一样
-* 
+* `connect`方法
+  * `Error connect(signal: StringName, callable: Callable, flags: int = 0)`
+  * 默认不能重复连接同一`callable`
+  * 默认不推荐使用此方式，除非`signal`是动态的
+
+* `emit_signal`方法
+  * `Error emit_signal(signal: StringName, ...)`
+  * 手动触发信号的方法
 
